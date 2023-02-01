@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 const BlogCard = () => {
   const state = useSelector((state) => state?.blogs);
-  console.log(state);
 
   return (
     <div className="flex flex-wrap gap-5">
