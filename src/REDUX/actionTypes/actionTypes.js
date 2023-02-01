@@ -1,0 +1,12 @@
+// export const actionType = {
+//   FETCHING_START: "FETCHING_START",
+//   FETCHING_SUCCESS: "FETCHING_SUCCESS",
+//   FETCHING_ERROR: "FETCHING_ERROR",
+// };
+export const FETCHING_START = "FETCHING_START";
+export const FETCHING_SUCCESS = "FETCHING_SUCCESS";
+export const FETCHING_ERROR = "FETCHING_ERROR";
+
+export const LOAD_BLOG = "LOAD_BLOG";
+export const ADD_BLOG = "ADD_BLOG";
+export const DELETE_BLOG = "DELETE_BLOG";
