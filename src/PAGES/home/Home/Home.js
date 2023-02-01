@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BlogCard from "../../../COMPONENTS/BlogCard/BlogCard";
 import DetailsModal from "../../../COMPONENTS/DetailsModal/DetailsModal";
-import fetchingSuccess from "../../../REDUX/ACTIONS/fetchingSuccess";
+import fetchingSuccess from "../../../REDUX/ACTIONS/blogAction";
 import {
   FETCHING_ERROR,
   FETCHING_START,

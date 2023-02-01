@@ -1,4 +1,15 @@
-import { ADD_BLOG, DELETE_BLOG, LOAD_BLOG } from "../actionTypes/actionTypes";
+import {
+  ADD_BLOG,
+  DELETE_BLOG,
+  FETCHING_SUCCESS,
+  LOAD_BLOG,
+} from "../actionTypes/actionTypes";
+
+const fetchingSuccess = (data) => {
+  return { type: FETCHING_SUCCESS, payload: data };
+};
+
+export default fetchingSuccess;
 
 export const loadBlog = (data) => {
   return {

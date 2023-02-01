@@ -4,7 +4,7 @@ import {
   FETCHING_SUCCESS,
 } from "../actionTypes/actionTypes";
 
-const initialState = { loading: false, error: false, posts: [] };
+const initialState = { loading: false, error: false, blogs: [] };
 
 export const blogReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -12,7 +12,7 @@ export const blogReducer = (state = initialState, action) => {
       return { ...state, loading: true };
 
     case FETCHING_SUCCESS:
-      return { ...state, loading: false, posts: [...action?.payload] };
+      return { ...state, loading: false, blogs: [...action?.payload] };
     case FETCHING_ERROR:
       return { ...state, loading: false, error: true };
 

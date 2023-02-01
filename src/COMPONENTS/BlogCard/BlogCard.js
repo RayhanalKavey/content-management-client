@@ -2,12 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const BlogCard = () => {
-  const state = useSelector((state) => state?.posts);
+  const state = useSelector((state) => state?.blogs);
   console.log(state);
 
   return (
     <div className="flex flex-wrap gap-5">
-      {state.map((blog, i) => (
+      {state?.map((blog, i) => (
         <div key={i} className="card card-compact w-96 bg-base-100 shadow-xl">
           <div className="card-body">
             <h2 className="card-title">${blog?.title}</h2>
