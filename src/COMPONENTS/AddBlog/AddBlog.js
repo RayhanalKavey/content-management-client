@@ -1,6 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
+import { ADD_BLOG } from "../../REDUX/actionTypes/actionTypes";
+import BlogAdd from "../../REDUX/ReduxThunk/addBlog/BlogAdd";
 
 const AddBlog = () => {
   const {
@@ -17,7 +19,7 @@ const AddBlog = () => {
       description,
     };
     console.log(blog);
-    // dispatch(addProductData(product));
+    dispatch(BlogAdd(blog));
   };
   return (
     <div className="flex justify-center items-center h-full ">

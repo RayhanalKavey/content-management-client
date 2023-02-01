@@ -5,7 +5,9 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <Link to="/" className="btn btn-ghost normal-case text-xl">
+          Blog Manager
+        </Link>
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">
@@ -14,6 +16,9 @@ const Navbar = () => {
             placeholder="Search"
             className="input input-bordered"
           />
+        </div>
+        <div>
+          <Link to={"/"}> Home</Link>
         </div>
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost  avatar">
@@ -25,9 +30,6 @@ const Navbar = () => {
           >
             <li>
               <Link to={"/add-blog"}>Add Blog</Link>
-            </li>
-            <li>
-              <a>Logout</a>
             </li>
           </ul>
         </div>

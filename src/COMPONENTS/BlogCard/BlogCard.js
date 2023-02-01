@@ -10,9 +10,11 @@ const BlogCard = () => {
         <div key={i} className="card card-compact w-96 bg-base-100 shadow-xl">
           <div className="card-body">
             <h2 className="card-title">${blog?.title}</h2>
-            <p>${blog?.body.slice(1, 150)}...</p>
+            <p>${blog?.body?.slice(1, 100)}...</p>
             <div className="card-actions justify-end">
-              <label htmlFor="blog-modal" className="btn  btn-primary">
+              <button className="btn btn-xs btn-success">Edit</button>
+              <button className="btn btn-xs btn-error">Delete</button>
+              <label htmlFor="blog-modal" className="btn  btn-primary btn-xs">
                 read more
               </label>
             </div>

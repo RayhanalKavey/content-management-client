@@ -1,4 +1,5 @@
 import {
+  ADD_BLOG,
   FETCHING_ERROR,
   FETCHING_START,
   FETCHING_SUCCESS,
@@ -15,6 +16,12 @@ export const blogReducer = (state = initialState, action) => {
       return { ...state, loading: false, blogs: [...action?.payload] };
     case FETCHING_ERROR:
       return { ...state, loading: false, error: true };
+    case ADD_BLOG:
+      return {
+        ...state,
+        loading: false,
+        blogs: [...state?.blogs, action?.payload],
+      };
 
     default:
       return state;
