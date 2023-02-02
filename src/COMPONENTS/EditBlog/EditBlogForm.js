@@ -1,10 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import { BlogEdit } from "../../REDUX/ReduxThunk/BlogEdit/BlogEdit";
 
 const EditBlogForm = () => {
-  const state = useSelector((state) => state?.blogs);
+  let { state } = useLocation();
+  console.log(state);
   const {
     register,
     handleSubmit,
@@ -13,13 +15,13 @@ const EditBlogForm = () => {
   const dispatch = useDispatch();
 
   const submit = (data) => {
-    const { title, description } = data;
+    const { title, body } = data;
     const blog = {
       title,
-      description,
+      body,
     };
     console.log(blog);
-    // dispatch(BlogEdit(blog));
+    dispatch(BlogEdit(blog, state?._id));
   };
   return (
     <div className="flex justify-center items-center h-full ">
@@ -36,7 +38,7 @@ const EditBlogForm = () => {
           {...register("title", { required: "Title is required !" })}
           className="input input-bordered w-full "
           placeholder="Blog title"
-          // defaultValue={blog?.title}
+          defaultValue={state?.title}
         />
         {/* erroR message */}
         {errors.title && (
@@ -49,16 +51,16 @@ const EditBlogForm = () => {
         </label>
         <input
           type="text"
-          {...register("description", {
+          {...register("body", {
             required: "Description is required !",
           })}
           className="input input-bordered w-full "
           placeholder="Blog title"
-          // defaultValue={blog?.description}
+          defaultValue={state?.body}
         />
         {/* erroR message */}
-        {errors.description && (
-          <p className="text-error mt-1"> {errors.description?.message}</p>
+        {errors.body && (
+          <p className="text-error mt-1"> {errors.body?.message}</p>
         )}
         {/*///  */}
 

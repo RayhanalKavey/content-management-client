@@ -19,7 +19,6 @@ const Home = () => {
   return (
     <div>
       <BlogCard></BlogCard>
-      <DetailsModal></DetailsModal>
     </div>
   );
 };

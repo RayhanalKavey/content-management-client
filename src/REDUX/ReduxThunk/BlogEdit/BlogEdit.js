@@ -1,20 +1,22 @@
 import { EDIT_BLOG } from "../../actionTypes/actionTypes";
 
-export const BlogEdit = (blog) => {
+export const BlogEdit = (newBlog, ID) => {
+  // console.log(newBlog);
   return async (dispatch, getState) => {
     const res = await fetch(
-      `${process.env.REACT_APP_api_url}/blog-delete/${blog?._id}`,
+      `${process.env.REACT_APP_api_url}/blog-edit/${ID}`,
       {
-        method: "POST",
+        method: "PUT",
         headers: {
-          "content-type": "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(blog),
+        body: JSON.stringify(newBlog),
       }
     );
-    const data = await res.json();
-    if (data.acknowledge) {
-      dispatch({ type: EDIT_BLOG, payload: blog?._id });
+    const updatedData = await res.json();
+    console.log(updatedData);
+    if (updatedData?.acknowledged) {
+      dispatch({ type: EDIT_BLOG, payload: updatedData });
     }
   };
 };

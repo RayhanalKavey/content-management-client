@@ -13,10 +13,10 @@ const AddBlog = () => {
   const dispatch = useDispatch();
 
   const submit = (data) => {
-    const { title, description } = data;
+    const { title, body } = data;
     const blog = {
       title,
-      description,
+      body,
     };
     console.log(blog);
     dispatch(BlogAdd(blog));
@@ -48,15 +48,15 @@ const AddBlog = () => {
         </label>
         <input
           type="text"
-          {...register("description", {
+          {...register("body", {
             required: "Description is required !",
           })}
           className="input input-bordered w-full "
           placeholder="Blog title"
         />
         {/* erroR message */}
-        {errors.description && (
-          <p className="text-error mt-1"> {errors.description?.message}</p>
+        {errors.body && (
+          <p className="text-error mt-1"> {errors.body?.message}</p>
         )}
         {/*///  */}
 

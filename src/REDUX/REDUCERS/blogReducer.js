@@ -28,7 +28,10 @@ export const blogReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        // blogs: _id,
+        blogs: [
+          ...state?.blogs?.filter((b) => b._id !== action?.payload),
+          action?.payload,
+        ],
       };
     case DELETE_BLOG:
       return {
