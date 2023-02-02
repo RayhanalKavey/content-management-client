@@ -1,5 +1,7 @@
 import {
   ADD_BLOG,
+  DELETE_BLOG,
+  EDIT_BLOG,
   FETCHING_ERROR,
   FETCHING_START,
   FETCHING_SUCCESS,
@@ -21,6 +23,18 @@ export const blogReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         blogs: [...state?.blogs, action?.payload],
+      };
+    case EDIT_BLOG:
+      return {
+        ...state,
+        loading: false,
+        // blogs: _id,
+      };
+    case DELETE_BLOG:
+      return {
+        ...state,
+        loading: false,
+        blogs: state?.blogs?.filter((b) => b._id !== action?.payload),
       };
 
     default:
