@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { BlogDelete } from "../../REDUX/ReduxThunk/BlogDelete/BlogDelete";
 import DetailsModal from "../DetailsModal/DetailsModal";
 
-export function name(params) {}
 const BlogCard = () => {
+  const [details, setDetails] = useState();
+
+  const handleDetails = (blog) => {
+    setDetails(blog);
+  };
   const state = useSelector((state) => state?.blogs);
   const dispatch = useDispatch();
   return (
@@ -35,10 +39,14 @@ const BlogCard = () => {
                 Delete
               </button>
 
-              <label htmlFor="blog-modal" className="btn  btn-primary btn-xs">
+              <label
+                htmlFor="blog-modal"
+                className="btn  btn-primary btn-xs"
+                onClick={() => handleDetails(blog)}
+              >
                 read more
               </label>
-              <DetailsModal></DetailsModal>
+              <DetailsModal details={details}></DetailsModal>
             </div>
           </div>
         </div>

@@ -18,7 +18,7 @@ const AddBlog = () => {
       title,
       body,
     };
-    console.log(blog);
+
     dispatch(BlogAdd(blog));
   };
   return (

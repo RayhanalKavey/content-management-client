@@ -1,12 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { BlogEdit } from "../../REDUX/ReduxThunk/BlogEdit/BlogEdit";
 
 const EditBlogForm = () => {
   let { state } = useLocation();
-  console.log(state);
+
   const {
     register,
     handleSubmit,
@@ -20,7 +20,7 @@ const EditBlogForm = () => {
       title,
       body,
     };
-    console.log(blog);
+  
     dispatch(BlogEdit(blog, state?._id));
   };
   return (

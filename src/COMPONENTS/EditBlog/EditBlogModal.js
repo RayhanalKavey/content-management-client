@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { BlogEdit } from "../../REDUX/ReduxThunk/BlogEdit/BlogEdit";
 
 const EditBlogModal = ({ blog }) => {
-  console.log(blog);
   const {
     register,
     handleSubmit,
@@ -18,7 +17,7 @@ const EditBlogModal = ({ blog }) => {
       title,
       body,
     };
-    console.log("newBlog", newBlog);
+
     dispatch(BlogEdit(newBlog, blog?._id));
   };
   return (

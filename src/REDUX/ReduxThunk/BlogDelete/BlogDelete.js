@@ -4,7 +4,7 @@ import { DELETE_BLOG } from "../../actionTypes/actionTypes";
 
 export const BlogDelete = (ID) => {
   // const navigate = useNavigate();
-  console.log(ID);
+
   return async (dispatch, getState) => {
     const res = await fetch(
       `${process.env.REACT_APP_api_url}/blog-delete/${ID}`,
@@ -16,7 +16,7 @@ export const BlogDelete = (ID) => {
       }
     );
     const data = await res.json();
-    console.log(data?.acknowledged);
+
     if (data?.acknowledged) {
       // navigate("/");
       // toast.success("BLOG deleted successfully!!");

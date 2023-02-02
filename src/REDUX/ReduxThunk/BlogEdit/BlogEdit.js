@@ -1,7 +1,6 @@
 import { EDIT_BLOG } from "../../actionTypes/actionTypes";
 
 export const BlogEdit = (newBlog, ID) => {
-  // console.log(newBlog);
   return async (dispatch, getState) => {
     const res = await fetch(
       `${process.env.REACT_APP_api_url}/blog-edit/${ID}`,
