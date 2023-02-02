@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { BlogDelete } from "../../REDUX/ReduxThunk/BlogDelete/BlogDelete";
 import { BlogEdit } from "../../REDUX/ReduxThunk/BlogEdit/BlogEdit";
+import EditBlogModal from "../EditBlog/EditBlogModal";
 
 export function name(params) {}
 const BlogCard = () => {
@@ -19,20 +20,23 @@ const BlogCard = () => {
             <h2 className="card-title">${blog?.title}</h2>
             <p>${blog?.body?.slice(1, 100)}...</p>
             <div className="card-actions justify-end">
-              <label htmlFor="Edit-modal" className="btn btn-xs btn-success">
+              <label htmlFor="edit-modal" className="btn btn-xs btn-success">
                 Edit
               </label>
+
               <button
                 className="btn btn-xs btn-error"
                 onClick={() => dispatch(BlogDelete(blog?._id))}
               >
                 Delete
               </button>
+
               <label htmlFor="blog-modal" className="btn  btn-primary btn-xs">
                 read more
               </label>
             </div>
           </div>
+          <EditBlogModal />
         </div>
       ))}
     </div>

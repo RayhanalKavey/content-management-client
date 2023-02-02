@@ -1,10 +1,11 @@
 import React from "react";
 
-const EditBlogModal = () => {
+const EditBlogModal = ({ blog }) => {
+  console.log(blog);
   return (
     <>
       {/* The button to open modal */}
-      <label htmlFor="my-modal" className="btn">
+      <label htmlFor="edit-modal" className="btn">
         open modal
       </label>
 
